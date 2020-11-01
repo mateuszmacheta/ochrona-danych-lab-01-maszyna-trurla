@@ -1,0 +1,100 @@
+object Form1: TForm1
+  Left = 594
+  Height = 520
+  Top = 241
+  Width = 656
+  ActiveControl = Edit1
+  Caption = 'Maszyna Trurla - Mateusz Macheta 141147, 2020/21, wydzial techniki i informatyki, semestr V'
+  ClientHeight = 0
+  ClientWidth = 0
+  DesignTimePPI = 120
+  LCLVersion = '2.0.10.0'
+  object Button_Koniec: TButton
+    Left = 495
+    Height = 37
+    Top = 472
+    Width = 142
+    Caption = '&Koniec'
+    OnClick = Button_KoniecClick
+    TabOrder = 0
+  end
+  object Edit1: TEdit
+    Left = 24
+    Height = 28
+    Top = 48
+    Width = 154
+    TabOrder = 1
+  end
+  object Edit2: TEdit
+    Left = 208
+    Height = 28
+    Top = 48
+    Width = 168
+    TabOrder = 2
+  end
+  object Label1: TLabel
+    Left = 27
+    Height = 20
+    Top = 15
+    Width = 42
+    Caption = '&Liczba'
+    FocusControl = Edit1
+    ParentColor = False
+  end
+  object Label2: TLabel
+    Left = 208
+    Height = 20
+    Top = 15
+    Width = 54
+    Caption = 'Licz&ba 2'
+    FocusControl = Edit2
+    ParentColor = False
+  end
+  object Memo_Liczba: TMemo
+    Left = 392
+    Height = 216
+    Top = 128
+    Width = 248
+    TabOrder = 3
+  end
+  object Button_Czytaj: TButton
+    Left = 495
+    Height = 40
+    Top = 424
+    Width = 142
+    Caption = '&Czytaj liczbę'
+    OnClick = Button_CzytajClick
+    TabOrder = 4
+  end
+  object Button_Info: TButton
+    Left = 496
+    Height = 40
+    Top = 368
+    Width = 138
+    Caption = '&Info'
+    OnClick = Button_InfoClick
+    TabOrder = 5
+  end
+  object Label3: TLabel
+    Left = 184
+    Height = 28
+    Top = 48
+    Width = 16
+    Caption = 'X'
+    Font.Name = 'Arial Black'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 384
+    Height = 28
+    Top = 48
+    Width = 13
+    Caption = '='
+    Font.Name = 'Arial Black'
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+end
