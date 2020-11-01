@@ -1,13 +1,16 @@
 object Form1: TForm1
-  Left = 594
+  Left = 572
   Height = 520
-  Top = 241
+  Top = 323
   Width = 656
   ActiveControl = Edit1
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'Maszyna Trurla - Mateusz Macheta 141147, 2020/21, wydzial techniki i informatyki, semestr V'
-  ClientHeight = 0
-  ClientWidth = 0
+  ClientHeight = 520
+  ClientWidth = 656
   DesignTimePPI = 120
+  OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
   object Button_Koniec: TButton
     Left = 495
@@ -62,7 +65,7 @@ object Form1: TForm1
     Height = 40
     Top = 424
     Width = 142
-    Caption = '&Czytaj liczbę'
+    Caption = '&Wykonaj'
     OnClick = Button_CzytajClick
     TabOrder = 4
   end
@@ -96,5 +99,22 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentColor = False
     ParentFont = False
+  end
+  object Edit3: TEdit
+    Left = 421
+    Height = 28
+    Top = 48
+    Width = 189
+    ReadOnly = True
+    TabOrder = 6
+  end
+  object Label5: TLabel
+    Left = 424
+    Height = 20
+    Top = 15
+    Width = 40
+    Caption = 'W&ynik'
+    FocusControl = Edit3
+    ParentColor = False
   end
 end
