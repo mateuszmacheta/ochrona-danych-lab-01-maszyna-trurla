@@ -6,8 +6,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, LCLType,
-  ExtCtrls;
+  Classes, SysUtils, DateUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, LCLType,
+  ExtCtrls, ComCtrls, Types;
 
 type
 
@@ -28,11 +28,13 @@ type
     Label5: TLabel;
     Memo_Liczba: TMemo;
     PaintBox1: TPaintBox;
+    ProgressBar1: TProgressBar;
     procedure Button_WczytajClick(Sender: TObject);
     procedure Button_InfoClick(Sender: TObject);
     procedure Button_WykonajClick(Sender: TObject);
     procedure Button_KoniecClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+
 
   private
 
@@ -87,13 +89,6 @@ begin
      CloseFile(f);
 end;
 
-procedure wyswietlObliczanie;
-
-begin
-
-
-end;
-
 procedure TForm1.Button_KoniecClick(Sender: TObject);
 begin
   Application.Terminate;
@@ -106,7 +101,7 @@ end;
 
 procedure TForm1.Button_InfoClick(Sender: TObject);
 begin
-  Application.MessageBox('Hej','Maszyna Trurla - Mateusz Macheta 141147, 2020/21, wydzial techniki i informatyki, semestr V',MB_OK);
+  Application.MessageBox('Maszyna Trurla - Mateusz Macheta 141147, 2020/21, wydzial techniki i informatyki, semestr V','Info',MB_OK);
 end;
 
 procedure TForm1.Button_WczytajClick(Sender: TObject);
@@ -130,6 +125,9 @@ CloseFile(f);
 end;
 
 procedure TForm1.Button_WykonajClick(Sender: TObject);
+var x1e,y1e,x2e,y2e : integer;
+var czas : TDateTime;
+var i : integer;
 var line: string;
 begin
 try
@@ -139,6 +137,34 @@ except
   Application.MessageBox('Błąd konwersji liczb(y) z łańcucha','Błąd',MB_OK);
   exit
 end;
+//wyswietl Obliczanie
+x1e := Trunc(PaintBox1.Width * random);
+y1e := Trunc(PaintBox1.Height * random);
+x2e := Trunc(PaintBox1.Width * random);
+y2e := Trunc(PaintBox1.Height * random);
+
+czas := Now;
+for i:=0 to 30 do
+       begin
+       Edit3.Text := FloatToStr(random * MaxInt);
+       Edit3.Update;
+       ProgressBar1.Position:=i;
+       PaintBox1.Canvas.Clear;
+       x1e := x1e + Trunc((2*random - 1)*PaintBox1.Width/5 * random);
+       y1e := y1e + Trunc((2*random - 1)*PaintBox1.Height/5 * random);
+       x2e := x2e + Trunc((2*random - 1)*PaintBox1.Width/5 * random);
+       y2e := y2e + Trunc((2*random - 1)*PaintBox1.Height/5 * random);
+       PaintBox1.Canvas.Ellipse(x1e,y1e,x2e,y2e);
+       while (MilliSecondsBetween(Now,czas) < i*100) do
+             begin
+            Sleep(1);
+            end;
+       end;
+
+  //Application.MessageBox(Pchar(IntToStr(MilliSecondsBetween(Now,czas))),'Czas na obliczenia',MB_OK);
+
+ // oblicz wynik i dopisz do historii oraz do pliku
+
 Wynik :=  wykonajObliczenia(Liczba, Liczba2);
 line:=   Edit1.Text + ' x ' + Edit2.Text+ ' = ' + Wynik;
 Memo_Liczba.Append(line);

@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 551
-  Height = 520
-  Top = 155
+  Left = 636
+  Height = 548
+  Top = 254
   Width = 766
   ActiveControl = Edit1
   BorderIcons = [biSystemMenu, biMinimize]
@@ -131,5 +131,13 @@ object Form1: TForm1
     Caption = 'W&czytaj historię'
     OnClick = Button_WczytajClick
     TabOrder = 7
+  end
+  object ProgressBar1: TProgressBar
+    Left = 19
+    Height = 29
+    Top = 512
+    Width = 722
+    Max = 30
+    TabOrder = 8
   end
 end
