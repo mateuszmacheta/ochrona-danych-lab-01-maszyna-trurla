@@ -1,22 +1,22 @@
 object Form1: TForm1
-  Left = 572
+  Left = 551
   Height = 520
-  Top = 323
-  Width = 656
+  Top = 155
+  Width = 766
   ActiveControl = Edit1
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Maszyna Trurla - Mateusz Macheta 141147, 2020/21, wydzial techniki i informatyki, semestr V'
-  ClientHeight = 520
-  ClientWidth = 656
+  ClientHeight = 0
+  ClientWidth = 0
   DesignTimePPI = 120
   OnCreate = FormCreate
   LCLVersion = '2.0.10.0'
   object Button_Koniec: TButton
-    Left = 495
+    Left = 602
     Height = 37
-    Top = 472
-    Width = 142
+    Top = 456
+    Width = 143
     Caption = '&Koniec'
     OnClick = Button_KoniecClick
     TabOrder = 0
@@ -32,7 +32,7 @@ object Form1: TForm1
     Left = 208
     Height = 28
     Top = 48
-    Width = 168
+    Width = 192
     TabOrder = 2
   end
   object Label1: TLabel
@@ -54,26 +54,26 @@ object Form1: TForm1
     ParentColor = False
   end
   object Memo_Liczba: TMemo
-    Left = 392
+    Left = 448
     Height = 216
-    Top = 128
-    Width = 248
+    Top = 93
+    Width = 293
     TabOrder = 3
   end
-  object Button_Czytaj: TButton
-    Left = 495
+  object Button_Wykonaj: TButton
+    Left = 599
     Height = 40
-    Top = 424
+    Top = 328
     Width = 142
     Caption = '&Wykonaj'
-    OnClick = Button_CzytajClick
+    OnClick = Button_WykonajClick
     TabOrder = 4
   end
   object Button_Info: TButton
-    Left = 496
+    Left = 599
     Height = 40
-    Top = 368
-    Width = 138
+    Top = 392
+    Width = 142
     Caption = '&Info'
     OnClick = Button_InfoClick
     TabOrder = 5
@@ -90,7 +90,7 @@ object Form1: TForm1
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 384
+    Left = 416
     Height = 28
     Top = 48
     Width = 13
@@ -101,10 +101,10 @@ object Form1: TForm1
     ParentFont = False
   end
   object Edit3: TEdit
-    Left = 421
+    Left = 445
     Height = 28
     Top = 48
-    Width = 189
+    Width = 296
     ReadOnly = True
     TabOrder = 6
   end
@@ -116,5 +116,20 @@ object Form1: TForm1
     Caption = 'W&ynik'
     FocusControl = Edit3
     ParentColor = False
+  end
+  object PaintBox1: TPaintBox
+    Left = 19
+    Height = 405
+    Top = 93
+    Width = 405
+  end
+  object Button_Wczytaj: TButton
+    Left = 451
+    Height = 42
+    Top = 328
+    Width = 133
+    Caption = 'W&czytaj historię'
+    OnClick = Button_WczytajClick
+    TabOrder = 7
   end
 end
